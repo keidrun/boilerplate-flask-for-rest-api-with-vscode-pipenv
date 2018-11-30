@@ -1,6 +1,6 @@
 # boilerplate-flask-for-rest-api-with-vscode-pipenv [![Build Status][travis-image]][travis-url] [![Coverage][codecov-image]][codecov-url] [![License: MIT][license-image]][license-url]
 
-Boilerplate of Flask for REST API with VSCode and Pipenv
+Boilerplate of Flask for REST API with VSCode and Pipenv.
 
 ## Required
 
