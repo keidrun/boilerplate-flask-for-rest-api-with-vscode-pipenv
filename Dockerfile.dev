@@ -1,0 +1,23 @@
+FROM python:3.7.1-slim-stretch
+
+WORKDIR /usr/src/app
+
+RUN apt-get update \
+  && apt-get install -y git
+
+RUN pip install --upgrade pip setuptools \
+  && pip install pipenv==2018.11.26
+
+COPY Pipfile ./
+COPY Pipfile.lock ./
+RUN pipenv install --dev --system
+
+ENV PYTHONUNBUFFERED 1
+ENV FLASK_APP src/app.py
+ENV FLASK_ENV development
+
+COPY ./ ./
+
+EXPOSE 5000
+
+CMD python src/app.py
